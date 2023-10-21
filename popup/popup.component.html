@@ -1,0 +1,50 @@
+<app-cadre-popup (close)="close(false)" [titre]="'Uploader fichier'">
+  <form [formGroup]="formDocImporte" (keydown.enter)="$event.preventDefault()">
+
+    <div draggable="true" ngClass="{{dragAreaClass}}" class="div-drag" [hidden]="isFileselect">
+      <input type="file" accept='image/*' #file [multiple]="true" (change)="onFileChange($event)" style="display:none"
+        formControlName="fichier" />
+      <i class="fas fa-cloud-upload-alt mt-5 mb-2"></i>
+      <span class="mb-5">
+        Glisser déposer ici
+      </span>
+      <a class="btn btn-choisir mb-2" href="javascript:void(0)" (click)="file.click()">
+        Choisir un fichier
+      </a>
+    </div>
+
+
+    <div *ngIf="isFileselect" class="row images">
+      <div *ngFor="let file of fichiersAEnvoyer; let index = index" class="col col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="previewImg">
+          <span class="fermer" (click)="deleteFile(index)">
+            <i class="fas fa-times"></i>
+          </span>
+          <img [src]="file.urlFile" alt="">
+        </div>
+        <div>
+          {{file.time}}
+        </div>
+        <div>
+          {{file.fichierBlob.size}}
+        </div>
+      </div>
+    </div>
+
+
+    <div draggable="true" ngClass="{{dragAreaClass}}" class="chargement" [hidden]="!chargement">
+      <i class="fas fa-cloud-upload-alt mt-5 mb-2"></i>
+      <span>
+        Chargement...
+      </span>
+    </div>
+
+    <div class="row">
+      <div class="form-group text-right col-12 mt-3">
+        <button (click)="envoyerLesFichiers()" class="btn btn-secondary">Envoyer</button>
+
+      </div>
+    </div>
+
+  </form>
+</app-cadre-popup>

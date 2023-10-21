@@ -1,0 +1,18 @@
+<div class="cadre-popup">
+    <div class="example-box" cdkDrag>
+       <div class="body">
+           <ng-content></ng-content>
+       </div>
+        <div class="tete example-handle example-handle1" cdkDragHandle>
+            <div class="titre">
+                {{titre}}
+            </div>
+            <div class="angle" (click)="closePopup($event)">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="pied example-handle example-handle2" cdkDragHandle>
+
+        </div>
+    </div>
+</div>

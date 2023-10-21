@@ -1,0 +1,51 @@
+<div class="photos">
+  <div class="row">
+
+    <div class="p-3">
+      <app-popup (closePopup)="closePopup()" (setPhotos)="setPhotos($event)" *ngIf="showAjouterPhoto">
+      </app-popup>
+      <button class="btn btn-success" (click)="fShowAjouterPhoto()">
+        <span>
+          <i class="fa fa-plus"></i>
+          Ajouter photo
+        </span>
+      </button>
+
+      <button class="btn btn-secondary mx-3" (click)="download()">
+        <span>
+          <i class="fa fa-plus"></i>
+          Générer Word
+          <img [hidden]="!loading" class="loading" src="../assets/loading.gif" alt="image">
+        </span>
+      </button>
+
+    </div>
+
+    <!-- <img [src]="image" alt="image"> -->
+
+    <!-- <a href="http://www.alsacreations.com/css/img/picto-quiz.png" download="Pacman_Kiwi.png">Télécharger l'image</a> -->
+
+    <!-- <img [src]="image" alt="image"> -->
+
+    <div class="col-12 mb-3 px-3">
+      <div class="row">
+
+        <div *ngFor="let image of listeImages; let i =index"
+          [ngClass]="{'div-Img': true, 'ombre-jaune': image.couverture}" (click)="open(image.rang)">
+          <a class="example-image-link" style="cursor:zoom-in">
+            <div [ngClass]="{delete: true}">
+              <i class="fas fa-trash-alt"></i>
+            </div>
+            <div [ngClass]="{favoris: true,choisis: image.couverture}">
+              <i class="fas fa-bookmark"></i>
+            </div>
+            <img [src]="image.urlFile" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+            <label class="titre-photo">{{image.time}}</label> <br>
+            <label class="titre-photo">{{image.fichierBlob.size}}</label>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

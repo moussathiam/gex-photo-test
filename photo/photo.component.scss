@@ -1,0 +1,113 @@
+.photos {
+    padding: 30px;
+    margin: 0px;
+    width: 100%;
+  }
+  
+  .photos>div {
+    background-color: white;
+    border: 1px solid #64BECD;
+    padding: 20px 10px;
+    margin: 0px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  
+  
+  .div-Img {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.418);
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 250px;
+    margin-right: 10px;
+  }
+  
+  .div-Img:hover {
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  
+  .div-Img.ombre-jaune {
+    box-shadow: 0px 0px 5px 2px rgba(255, 255, 0, 0.6);
+    border: 1px solid gold;
+  }
+  
+  .titre-photo {
+    position: relative;
+    top: -10px;
+    font-weight: 600;
+    color: rgb(85, 85, 85);
+  }
+  
+  
+  .favoris {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(158, 158, 158);
+    cursor: pointer;
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  .favoris:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(78, 78, 78);
+    box-shadow: 0px 3px 3px 1px rgba(3, 3, 3, 0.212);
+  }
+  
+  .favoris.choisis {
+    color: gold;
+    cursor: not-allowed;
+  }
+  
+  .delete {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(110, 110, 110);
+    cursor: pointer;
+    border-radius: 0px 0px 5px 5px;
+    padding-top: 3px;
+  }
+  
+  .delete:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(255, 31, 31);
+    box-shadow: 0px 3px 3px 1px rgba(3, 3, 3, 0.212);
+  }
+  
+  
+  ::ng-deep .lb-downloadContainer>a {
+    cursor: pointer !important;
+  }
+  
+  
+  ::ng-deep  #btnDownloadImg{
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 25px;
+  }
+  ::ng-deep  #btnDownloadImg i{
+    cursor: pointer;
+  }
+  
+  ::ng-deep  .lb-number{
+    color:  #00000000 !important;
+  }
+  
+
+  .loading{
+    width: 20px;
+    height: 20px;
+  }
